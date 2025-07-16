@@ -128,7 +128,7 @@ setInterval(async () => {
             socket.emit('flightData', flightData);
         });
     }
-}, 5000); // 5 seconds interval
+}, 60000); // 60 seconds interval
 
 // Health check endpoint
 app.get('/health', (req, res) => {
