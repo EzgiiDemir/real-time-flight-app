@@ -128,7 +128,7 @@ setInterval(async () => {
             socket.emit('flightData', flightData);
         });
     }
-}, 60000); // 60 seconds interval
+}, 100000);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
@@ -140,7 +140,7 @@ app.get('/health', (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3003;
 httpServer.listen(PORT, () => {
     console.log(`Flight data server running on port ${PORT}`);
     console.log(`Test client available at: http://localhost:${PORT}`);
