@@ -61,7 +61,7 @@
           :search-value="searchQuery"
           table-class-name="text-white"
           header-text-direction="center"
-          :rows-per-page="6"
+          :rows-per-page="12"
           show-index
       />
     </section>

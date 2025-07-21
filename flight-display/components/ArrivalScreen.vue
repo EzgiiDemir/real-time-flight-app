@@ -55,7 +55,7 @@
       <EasyDataTable
           :headers="headers"
           :items="filteredFlights"
-          :rows-per-page="6"
+          :rows-per-page="12"
           show-index
           table-class-name="text-white"
       />

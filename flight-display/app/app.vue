@@ -7,33 +7,11 @@
         : 'bg-gradient-to-br from-sky-200 to-gray-100 text-gray-800'
     ]"
   >
-    <!-- Dark Mode Toggle -->
-    <button
-        @click="isDarkMode = !isDarkMode"
-        class="absolute top-4 right-4 z-10 px-4 py-2 rounded-full shadow-lg font-semibold transition-colors"
-        :class="isDarkMode ? 'bg-white text-sky-900' : 'bg-gray-900 text-white'"
-    >
-      {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
-    </button>
+
 
     <!-- Başlık -->
     <header class="pt-10 pb-6 text-center animate-fade-in-down select-none">
       <h1 class="text-4xl sm:text-5xl font-black tracking-widest drop-shadow-lg flex justify-center items-center gap-3">
-        <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-10 w-10 text-sky-400 animate-bounce"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            stroke-width="2"
-            aria-hidden="true"
-        >
-          <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M10.5 6h9m-9 6h9m-7.5 6h7.5m-11-4.5l-3 3v-9m3 6l-3 3"
-          />
-        </svg>
         SKYPORT AIRPORT
       </h1>
       <p class="mt-2 text-sm sm:text-base font-semibold tracking-wide"
@@ -44,23 +22,33 @@
 
     <!-- Tab Seçenekleri -->
     <nav
-        class="flex overflow-x-auto sm:justify-center gap-3 sm:gap-6 backdrop-blur rounded-xl p-2 mb-8 max-w-4xl w-full transition-colors scrollbar-thin scrollbar-thumb-sky-500 scrollbar-track-transparent"
-        :class="isDarkMode ? 'bg-white/20' : 'bg-black/10'"
+        class="flex overflow-x-auto sm:justify-center gap-3 sm:gap-6 rounded-xl p-2 mb-8 max-w-4xl w-full transition-colors scrollbar-thin scrollbar-thumb-sky-500 scrollbar-track-transparent"
+        :class="isDarkMode ? 'bg-white/10' : 'bg-black/10'"
         role="tablist"
     >
+      <!-- Dark Mode Toggle -->
+      <button
+          @click="isDarkMode = !isDarkMode"
+          class="z-10 px-4 py-2 rounded-full font-semibold transition-colors whitespace-nowrap"
+          :class="isDarkMode ? 'bg-gray-100 text-sky-900' : 'bg-gray-800 text-white'"
+      >
+        {{ isDarkMode ? 'Light Mode' : 'Dark Mode' }}
+      </button>
+
+      <!-- Tabs -->
       <button
           v-for="(tab, i) in tabs"
           :key="tab.name"
           @click="activeTab = i"
           :class="[
-      'whitespace-nowrap px-4 sm:px-6 py-2 rounded-lg font-semibold transition-colors focus:outline-none',
+      'whitespace-nowrap px-4 sm:px-6 py-2 rounded-lg font-semibold transition-colors focus:outline-none flex-shrink-0',
       activeTab === i
         ? isDarkMode
           ? 'bg-white text-sky-900 shadow-lg shadow-sky-500/50'
           : 'bg-black text-white shadow-md'
         : isDarkMode
-          ? 'text-white hover:bg-white/30'
-          : 'text-black hover:bg-black/10',
+          ? 'text-white hover:bg-white/20'
+          : 'text-black hover:bg-black/20',
     ]"
           :aria-selected="activeTab === i"
           role="tab"
@@ -68,6 +56,7 @@
         {{ tab.label }}
       </button>
     </nav>
+
 
 
     <!-- Aktif Bileşen -->
