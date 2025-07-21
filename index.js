@@ -140,7 +140,7 @@ app.get('/health', (req, res) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 3003;
+const PORT = process.env.PORT || 3004;
 httpServer.listen(PORT, () => {
     console.log(`Flight data server running on port ${PORT}`);
     console.log(`Test client available at: http://localhost:${PORT}`);
