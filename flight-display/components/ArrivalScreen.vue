@@ -1,13 +1,14 @@
 <template>
   <div class="bg-gradient-to-br from-sky-900 to-gray-950 text-white flex flex-col items-center px-4 py-6">
     <!-- Header -->
-    <header class="text-center mb-10 select-none">
-      <h1 class="text-5xl font-extrabold tracking-widest drop-shadow-lg flex items-center justify-center gap-3">
-        🛬 ARRIVALS
-      </h1>
-      <p class="mt-2 text-lg text-sky-300 font-semibold">
+    <header class="w-full max-w-6xl text-center mb-10 select-none">
+      <p class="text-md md:text-lg text-sky-300 font-semibold mt-2">
         Live Flight Arrival Information
       </p>
+      <div class="mt-2 text-sky-200 flex justify-center items-center gap-2 text-sm md:text-base select-none">
+        <i class="far fa-clock"></i>
+        {{ currentDateTime }}
+      </div>
     </header>
 
     <!-- Filters -->
